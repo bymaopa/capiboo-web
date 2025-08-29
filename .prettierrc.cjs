@@ -1,4 +1,6 @@
 // .prettierrc.cjs
+
+/* eslint-disable no-undef */
 module.exports = {
   // --- Opciones de Estilo Básicas ---
   printWidth: 160,       // Ancho máximo de línea antes de saltar.
