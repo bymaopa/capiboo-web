@@ -1,0 +1,32 @@
+---
+/**
+ * Objetivos
+ * 1. Que sea dinamico el lang del tag de html
+ * 2. Agregar el titulo y descripcion de la pagina, para pasarselo por componente
+ * 3. Se agrega un navbar responsive para cada modelo de dispositivo
+ */
+
+// Components
+import BaseHead from '@components/BaseHead.astro';
+
+interface Props {
+	title: string;
+	description: string;
+}
+
+const { title, description } = Astro.props;
+const language = Astro.currentLocale;
+---
+
+<!doctype html>
+<html lang={language}>
+	<BaseHead title={title} description={description} />
+	<body class="w-screen h-[100vh] max-w-full flex left-0 right-0 top-0 bottom-0 justify-normal m-0 p-2 gap-x-4 overflow-hidden bg-slate-50">
+		<!--Sidebar Izquierdo -->
+		<!-- Navbar de busqueda y usuario -->
+		<main class="w-full h-full relative flex flex-col m-0 p-0 left-0 right-0 top-0 bottom-0 rounded-[15px] bg-slate-200 overflow-y-auto overflow-x-hidden">
+			<slot name="main" />
+		</main>
+		<!-- Bottom de informacion del mes -->
+	</body>
+</html>

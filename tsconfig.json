@@ -1,0 +1,21 @@
+{
+	"extends": "astro/tsconfigs/strict",
+	"include": [".astro/types.d.ts", "**/*"],
+	"exclude": ["dist"],
+	"compilerOptions": {
+		"baseUrl": ".",
+		"strictNullChecks": true,
+		"strictFunctionTypes": true,
+		"strictBindCallApply": true,
+		"paths": {
+			"@/*": ["./src/*"],
+			"@components": ["./src/components/*"],
+			"@pages": ["./src/pages/*"],
+			"@styles": ["./src/styles/*"],
+			"@layouts": ["./src/layouts/*"],
+			"@i18n": ["./src/i18n/*"],
+			"@hooks": ["./src/hooks/*"],
+			"@constants": ["./src/constants/*"]
+		}
+	}
+}

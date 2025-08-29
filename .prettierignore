@@ -1,0 +1,26 @@
+# .prettierignore
+
+# Dependencias
+node_modules
+
+# Ficheros de build y caché
+.astro
+.vscode
+.vscode/extensions
+dist
+.vercel
+
+# Ficheros de entorno
+.env
+.env.*
+!.env.example
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Ficheros de lock
+package-lock.json
+pnpm-lock.yaml

@@ -1,0 +1,24 @@
+# lefthook.yml
+#
+
+pre-commit:
+  parallel: true
+  commands:
+    format:
+      glob: "*.{js,ts,astro,svelte,json,md}"
+      run: pnpm prettier --write {staged_files}
+    lint:
+      glob: "*.{js,ts,astro,svelte,json,md}"
+      run: pnpm eslint --fix {staged_files}
+    
+# Se ejecuta solo antes de subir el codigo al repositorio
+pre-push:
+  commands:
+    check-types:
+      run: pnpm astro check
+
+commit-msg:
+  commands:
+    lint-message:
+      run: pnpx commitlint --edit {1}
+  

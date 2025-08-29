@@ -1,0 +1,44 @@
+{
+	"name": "capiboo-app",
+	"type": "module",
+	"version": "0.0.1",
+	"scripts": {
+		"dev": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"check": "astro check",
+		"lefthook": "lefthook install",
+		"astro": "astro"
+	},
+	"dependencies": {
+		"@astrojs/check": "^0.9.4",
+		"@astrojs/mdx": "^4.3.4",
+		"@astrojs/sitemap": "^3.5.1",
+		"@astrojs/svelte": "^7.1.0",
+		"@tailwindcss/vite": "^4.1.12",
+		"@tursodatabase/database": "0.1.4-pre.5",
+		"astro": "^5.13.5",
+		"astro-expressive-code": "^0.41.3",
+		"autoprefixer": "^10.4.21",
+		"postcss": "^8.5.6",
+		"svelte": "^5.38.6",
+		"tailwindcss": "^4.1.12",
+		"typescript": "^5.9.2"
+	},
+	"devDependencies": {
+		"@commitlint/cli": "^19.8.1",
+		"@commitlint/config-conventional": "^19.8.1",
+		"@eslint/js": "^9.34.0",
+		"@typescript-eslint/parser": "^8.41.0",
+		"astro-eslint-parser": "^1.2.2",
+		"eslint": "^9.34.0",
+		"eslint-plugin-astro": "^1.3.1",
+		"eslint-plugin-svelte": "^3.11.0",
+		"globals": "^16.3.0",
+		"lefthook": "^1.12.3",
+		"prettier": "^3.6.2",
+		"prettier-plugin-astro": "^0.14.1",
+		"prettier-plugin-svelte": "^3.4.0",
+		"typescript-eslint": "^8.41.0"
+	}
+}
