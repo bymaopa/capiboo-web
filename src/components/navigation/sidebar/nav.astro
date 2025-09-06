@@ -1,0 +1,36 @@
+---
+const arrLink = [
+	{ id: 101, name: 'Dashboard', route: '/', icon: '/src/assets/icons/nav/dashboard-svgrepo-com.svg' },
+	{ id: 105, name: 'Notes', route: '/notes', icon: '/src/assets/icons/nav/bookmark-svgrepo-com.svg' },
+	{ id: 103, name: 'Search', route: '/search', icon: '/src/assets/icons/nav/search-alt-2-svgrepo-com.svg' },
+	{ id: 104, name: 'Notify', route: '/notify', icon: '/src/assets/icons/nav/bell-svgrepo-com.svg' },
+	{ id: 106, name: 'Settings', route: '/settings', icon: '/src/assets/icons/nav/setting-1-svgrepo-com.svg' },
+];
+---
+
+<nav
+	id="navSide"
+	class="w-24 h-auto max-h-svh flex flex-col relative left-0 top-0 bottom-0 m-0 p-6 gap-12 justify-between place-items-center bg-transparent rounded-2xl"
+>
+	<!--Animated Favicon -->
+	<div class="w-auto h-auto block relative left-0 top-0 bottom-0 m-0 p-0 justify-center items-center bg-transparent">
+		<img class="drop-shadow-inherit drop-shadow-xl object-center m-0 p-0" src="/src/assets/logo.webp" alt="fi_capiboo" />
+	</div>
+	<!-- Menu Section -->
+	<div id="secMenuLink" class="w-auto h-full flex relative left-0 top-0 bottom-0 bg-transparent object-center m-0 p-1">
+		<ul id="ulMenuLink" class="w-auto h-auto flex flex-col relative left-0 top-0 bottom-0 m-0 p-0 pb-14 justify-center gap-y-4 rounded-[11px] backdrop-blur-sm">
+			{
+				arrLink.map((el) => (
+					<li id={'li' + el.id} class="w-18 h-18 m-0 p-0 rounded-[14px] hover:bg-slate-400/10">
+						<a
+							href={el.route}
+							class="w-full h-full flex relative left-0 right-0 justify-center items-center m-0 p-3 rounded-[16px] transition-all transform hover:scale-105 hover:ease-in-out duration-100"
+						>
+							<img class=" w-12 h-12 bg-transparent object-center p-0 m-0" src={el.icon} alt={el.name} />
+						</a>
+					</li>
+				))
+			}
+		</ul>
+	</div>
+</nav>
