@@ -1,11 +1,4 @@
 ---
-/**
- * Objetivos
- * 1. Que sea dinamico el lang del tag de html
- * 2. Agregar el titulo y descripcion de la pagina, para pasarselo por componente
- * 3. Se agrega un navbar responsive para cada modelo de dispositivo
- */
-
 // Components
 import BaseHead from '@components/base.head.astro';
 import Navigation from '@components/navigation/index.astro';
@@ -22,20 +15,17 @@ const language = Astro.currentLocale;
 <!doctype html>
 <html lang={language}>
 	<BaseHead title={title} description={description} />
-	<body class="w-screen h-[100vh] max-w-full flex left-0 right-0 top-0 bottom-0 justify-normal p-2 gap-x-4 overflow-hidden bg-[#e5eeef]">
+	<body class="w-screen h-[100vh] max-w-full flex left-0 right-0 top-0 bottom-0 justify-normal p-2 gap-x-4 bg-slate-50 dark:bg-[#121212] overflow-hidden">
 		<div class="w-full h-full relative flex flex-row m-0 p-0 left-0 right-0 top-0 bottom-0">
 			<!-- Navigation bar -->
-			<Navigation client:load transition:persist />
+			<Navigation transition:persist />
 			<main
 				id="main-container"
-				class="w-full h-full max-h-dvh relative flex overflow-hidden m-0 mt-24 lg:mt-0 p-0 left-0 right-0 top-0 bottom-0 rounded-[15px] bg-slate-50"
+				class="w-full h-full max-h-dvh relative flex overflow-hidden m-0 mt-24 lg:mt-0 p-0 left-0 right-0 top-0 bottom-0 rounded-[15px] bg-slate-50 dark:bg-black"
 			>
-				<div
-					id="content"
-					class="w-auto h-auto relative flex top-0 left-0 right-0 bottom-0 m-0 p-1 overflow-y-visible overflow-x-hidden"
-				>
-				<slot />
-			</div>
+				<div id="content" class="w-auto h-auto relative flex top-0 left-0 right-0 bottom-0 m-0 p-1 overflow-y-visible overflow-x-hidden text-black dark:text-slate-50">
+					<slot />
+				</div>
 			</main>
 		</div>
 	</body>

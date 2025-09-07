@@ -11,7 +11,7 @@ const { pathname } = Astro.url;
 ---
 
 <nav
-	class="fixed bottom-0 left-0 right-0 z-50 bg-white/60 backdrop-blur-3xl m-0 pb-12 pt-6 transition-all duration-300 ease-in-out lg:relative lg:left-auto lg:top-auto lg:bottom-auto lg:z-auto lg:bg-transparent lg:p-6"
+	class="fixed bottom-0 left-0 right-0 z-50 backdrop-blur-3xl m-0 pb-12 pt-6 transition-all duration-300 ease-in-out lg:relative lg:left-auto lg:top-auto lg:bottom-auto lg:z-auto lg:bg-transparent lg:p-6"
 >
 	<div class="flex h-full flex-row items-center justify-center align-middle lg:justify-start gap-x-14 lg:flex-col lg:gap-y-4">
 		<!-- User - Component -->
@@ -37,7 +37,7 @@ const { pathname } = Astro.url;
 						>
 							<img
 								id={`nav-icon-${el.name.toLowerCase()}`}
-								class:list={['h-auto w-auto bg-transparent object-center', { 'brightness-0 invert': pathname === el.route }]}
+								class:list={['h-auto w-auto bg-transparent object-center dark:brightness-0 dark:invert', { 'brightness-0 invert': pathname === el.route }]}
 								src={el.icon}
 								alt={el.name}
 							/>
