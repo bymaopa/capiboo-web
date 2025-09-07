@@ -1,6 +1,11 @@
 ---
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
+
+// Astro
+import { ClientRouter } from 'astro:transitions';
+
+// Styles
 import '@styles/global.css';
 
 interface Props {
@@ -20,11 +25,6 @@ var { title, description, image = '' } = Astro.props;
 	<link rel="icon" type="image/svg+xml" href="/favicon.webp" />
 	<meta name="generator" content={Astro.generator} />
 
-	<!-- Font preloads -->
-
-	<!-- Canonical URL -->
-	<!-- <link rel="canonical" href={canonicalURL} /> -->
-
 	<!-- Primary Meta Tags -->
 	<title>{title}</title>
 	<meta name="title" content={title} />
@@ -36,4 +36,6 @@ var { title, description, image = '' } = Astro.props;
 	<meta property="og:title" content={title} />
 	<meta property="og:description" content={description} />
 	<meta property="og:image" content={new URL(image, Astro.url)} />
+
+	<ClientRouter />
 </head>

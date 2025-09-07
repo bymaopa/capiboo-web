@@ -19,7 +19,7 @@ export default defineConfig({
     svelte()
   ],
   vite: {
-    plugins: [tailwindcss()],
+    plugins: [tailwindcss({ config: './tailwind.config.mjs' })],
     resolve: {
       alias: {
         '@': '/src',
