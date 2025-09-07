@@ -31,4 +31,3 @@ The project uses path aliases for easier imports:
 - `@styles`: `/src/styles`
 
 The main application logic is within the `src` directory. Pages are in `src/pages`, and reusable components are in `src/components`.
-
