@@ -1,17 +1,23 @@
 ---
-
 const { pathname } = Astro.url;
 console.log(pathname);
 ---
 
-<header class="w-full h-24 flex lg:hidden absolute flex-col top-0 left-0 right-0 px-1 lg:p-0 justify-center items-center align-middle text-black dark:text-slate-50">
-     {pathname != '/search' ? (
-        <div>
-            <h1>{pathname}</h1>
-        </div>
-     ) : (
-        <div id="sec-search" class="w-full h-full flex flex-row flex-nowrap justify-between align-middle items-center-safe z-50">
-            <input type="text" class="w-full h-14 relative top-0 left-0 right-0 px-4 rounded-2xl border-2 border-slate-600/20 dark:border-slate-300/20 bg-transparent/30 backdrop-blur-3xl text-black dark:text-slate-50" />
-        </div>
-     )}
+<header
+	class="w-full h-24 flex lg:hidden absolute flex-col top-0 left-0 right-0 px-1 lg:p-0 justify-center items-center align-middle text-black dark:text-slate-50"
+>
+	{
+		pathname != '/search' ? (
+			<div>
+				<h1>{pathname}</h1>
+			</div>
+		) : (
+			<div id="sec-search" class="w-full h-full flex flex-row flex-nowrap justify-between align-middle items-center-safe z-50">
+				<input
+					type="text"
+					class="w-full h-14 relative top-0 left-0 right-0 px-4 rounded-2xl border-2 border-slate-600/20 dark:border-slate-300/20 bg-transparent/30 backdrop-blur-3xl text-black dark:text-slate-50"
+				/>
+			</div>
+		)
+	}
 </header>
