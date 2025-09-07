@@ -7,8 +7,8 @@
  */
 
 // Components
-import BaseHead from '../components/BaseHead.astro';
-import SideNav from '../components/navigation/sidebar/nav.astro';
+import BaseHead from '@components/base.head.astro';
+import Navigation from '@components/navigation/sidebar/nav.astro';
 
 interface Props {
 	title: string;
@@ -25,11 +25,11 @@ const language = Astro.currentLocale;
 	<body class="w-screen h-[100vh] max-w-full flex left-0 right-0 top-0 bottom-0 justify-normal p-2 gap-x-4 overflow-hidden bg-slate-50">
 		<div class="w-full h-full relative flex flex-row m-0 p-0 left-0 right-0 top-0 bottom-0">
 			<!-- Navigation bar -->
-			<SideNav />
+			<Navigation />
 			<!-- Navbar de busqueda y usuario -->
 			<main
 				id="frame"
-				class="w-full h-full max-h-dvh relative flex flex-col m-0 p-0 left-0 right-0 top-0 bottom-0 rounded-[15px] bg-slate-200 overflow-y-auto overflow-x-hidden"
+				class="w-full h-full max-h-dvh relative flex flex-col m-0 p-0 left-0 right-0 top-0 bottom-0 rounded-[15px] bg-[#e5eeef] overflow-y-auto overflow-x-hidden"
 			>
 				<slot name="main" />
 			</main>

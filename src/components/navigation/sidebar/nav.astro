@@ -1,32 +1,35 @@
 ---
 const arrLink = [
-	{ id: 101, name: 'Dashboard', route: '/', icon: '/src/assets/icons/nav/dashboard-svgrepo-com.svg' },
-	{ id: 105, name: 'Notes', route: '/notes', icon: '/src/assets/icons/nav/bookmark-svgrepo-com.svg' },
-	{ id: 103, name: 'Search', route: '/search', icon: '/src/assets/icons/nav/search-alt-2-svgrepo-com.svg' },
+	{ id: 101, name: 'Dashboard', route: '/', icon: '/src/assets/icons/nav/dashboard-svgrepo-com.svg', type: 'bottom' },
+	{ id: 103, name: 'Search', route: '/search', icon: '/src/assets/icons/nav/search-alt-2-svgrepo-com.svg', type: 'bottom' },
+	{ id: 102, name: 'Notes', route: '/notes', icon: '/src/assets/icons/nav/bookmark-svgrepo-com.svg', type: 'bottom' },
 	{ id: 104, name: 'Notify', route: '/notify', icon: '/src/assets/icons/nav/bell-svgrepo-com.svg' },
-	{ id: 106, name: 'Settings', route: '/settings', icon: '/src/assets/icons/nav/setting-1-svgrepo-com.svg' },
+	{ id: 105, name: 'Settings', route: '/settings', icon: '/src/assets/icons/nav/setting-1-svgrepo-com.svg' },
 ];
 ---
 
-<nav
-	id="navSide"
-	class="w-24 h-auto max-h-svh flex flex-col relative left-0 top-0 bottom-0 m-0 p-6 gap-12 justify-between place-items-center bg-transparent rounded-2xl"
->
-	<!--Animated Favicon -->
-	<div class="w-auto h-auto block relative left-0 top-0 bottom-0 m-0 p-0 justify-center items-center bg-transparent">
-		<img class="drop-shadow-inherit drop-shadow-xl object-center m-0 p-0" src="/src/assets/logo.webp" alt="fi_capiboo" />
-	</div>
-	<!-- Menu Section -->
-	<div id="secMenuLink" class="w-auto h-full flex relative left-0 top-0 bottom-0 bg-transparent object-center m-0 p-1">
-		<ul id="ulMenuLink" class="w-auto h-auto flex flex-col relative left-0 top-0 bottom-0 m-0 p-0 pb-14 justify-center gap-y-4 rounded-[11px] backdrop-blur-sm">
+<nav class="fixed bottom-0 left-0 right-0 z-50 bg-white/60 backdrop-blur-3xl m-0 pb-12 pt-6 transition-all duration-300 ease-in-out lg:relative lg:left-auto lg:top-auto lg:bottom-auto lg:z-auto lg:bg-transparent lg:p-6">
+	<div class="flex h-full flex-row items-center justify-center align-middle lg:justify-start gap-x-14 lg:flex-col lg:gap-y-4">
+		<!-- User - Component -->
+		<div class="w-18 h-18 hidden lg:block">
+			<img class="h-auto w-auto block object-center drop-shadow-xl" src="/src/assets/logo.webp" alt="fi_capiboo" />
+		</div>
+		<!-- Menu Section -->
+		<ul class="lg:h-full flex flex-row gap-x-14 lg:flex-col lg:gap-y-4 justify-center items-center lg:justify-around lg:items-center">
 			{
 				arrLink.map((el) => (
-					<li id={'li' + el.id} class="w-18 h-18 m-0 p-0 rounded-[14px] hover:bg-slate-400/10">
-						<a
+					<li
+						id={`nav-item-${el.name.toLowerCase()}`}
+						class:list={[
+							'w-[36px] h-[36px] md:w-[40px] md:h-[40px] lg:h-[44px] lg:w-[44px] transition-all transform duration-100 ease-in-out hover:bg-slate-400/10',
+							{ 'hidden lg:block': el.type !== 'bottom' },
+						]}
+					>
+						<a	id={`nav-route-${el.name.toLowerCase()}`}
 							href={el.route}
-							class="w-full h-full flex relative left-0 right-0 justify-center items-center m-0 p-3 rounded-[16px] transition-all transform hover:scale-105 hover:ease-in-out duration-100"
+							class="flex h-full w-full transform items-center justify-center rounded-[16px] p-0 transition-transform duration-100 ease-in-out hover:scale-105"
 						>
-							<img class=" w-12 h-12 bg-transparent object-center p-0 m-0" src={el.icon} alt={el.name} />
+							<img id={`nav-icon-${el.name.toLowerCase()}`} class="h-auto w-auto bg-transparent object-center" src={el.icon} alt={el.name} />
 						</a>
 					</li>
 				))
